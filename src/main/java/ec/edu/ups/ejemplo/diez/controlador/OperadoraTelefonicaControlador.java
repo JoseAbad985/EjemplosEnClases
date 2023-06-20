@@ -6,6 +6,7 @@ package ec.edu.ups.ejemplo.diez.controlador;
 
 import ec.edu.ups.ejemplo.diez.idao.IOperadoraTelefonicaDAO;
 import ec.edu.ups.ejemplo.diez.modelo.OperadoraTelefonica;
+import java.util.List;
 
 /**
  *
@@ -28,9 +29,13 @@ public class OperadoraTelefonicaControlador {
         this.operadoraTelefonica = operadoraTelefonicaDAO.read(codigo);
         return this.operadoraTelefonica;
     }
-    public void eliminar(OperadoraTelefonica operadoraTelefonica){
-        this.operadoraTelefonica = operadoraTelefonica;
-        operadoraTelefonicaDAO.delete(operadoraTelefonica);
+    public boolean eliminar(String codigo){
+        OperadoraTelefonica operadoraTelefonicaEncontrada = this.buscar(operadoraTelefonica.getCodigo());
+        if(operadoraTelefonicaEncontrada != null){
+            operadoraTelefonicaDAO.delete(operadoraTelefonica);
+            return true;
+        }
+        return false;
     }
     
     public boolean actualizar (OperadoraTelefonica operadoraTelefonica){
@@ -40,5 +45,9 @@ public class OperadoraTelefonicaControlador {
             return true;
         }
         return false;
+    }
+    
+    public List<OperadoraTelefonica> listar(){
+        return operadoraTelefonicaDAO.list();
     }
 }

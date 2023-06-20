@@ -36,7 +36,7 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Eliminar Persona">
+            <TitledBorder title="Eliminar Operadora">
               <Font PropertyName="font" name="Helvetica Neue" size="18" style="1"/>
             </TitledBorder>
           </Border>
@@ -49,9 +49,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblCedulaEliminarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCodigoEliminarOperadora" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="lblNombreEliminarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblFechaNacimientoEliminarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -60,13 +59,12 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnCancelarEliminarPersona" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="txtNombreEliminarPersona" min="-2" pref="180" max="-2" attributes="0"/>
-                      <Component id="txtCedulaEliminarPersona" min="-2" pref="180" max="-2" attributes="0"/>
-                      <Component id="txtFechaNacimientoEliminarPersona" min="-2" pref="180" max="-2" attributes="0"/>
+                      <Component id="txtNombreEliminarOperadora" min="-2" pref="180" max="-2" attributes="0"/>
+                      <Component id="txtCodigoEliminarOperadora" min="-2" pref="180" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnBuscarEliminarPersona" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="116" max="32767" attributes="0"/>
+                  <EmptySpace pref="100" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -75,37 +73,32 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblCedulaEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCedulaEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCodigoEliminarOperadora" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCodigoEliminarOperadora" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnBuscarEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblNombreEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtNombreEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombreEliminarOperadora" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblFechaNacimientoEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtFechaNacimientoEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnAceptarEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCancelarEliminarPersona" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="60" max="32767" attributes="0"/>
+                  <EmptySpace pref="116" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblCedulaEliminarPersona">
+        <Component class="javax.swing.JLabel" name="lblCodigoEliminarOperadora">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cedula de la persona:"/>
+            <Property name="text" type="java.lang.String" value="Codigo de la operadora:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreEliminarPersona">
@@ -116,36 +109,22 @@
             <Property name="text" type="java.lang.String" value="Nombre:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblFechaNacimientoEliminarPersona">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Fecha de Nacimiento:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtCedulaEliminarPersona">
+        <Component class="javax.swing.JTextField" name="txtCodigoEliminarOperadora">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Ingrese la nueva cedula de la persona"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCedulaEliminarPersonaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoEliminarOperadoraActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNombreEliminarPersona">
+        <Component class="javax.swing.JTextField" name="txtNombreEliminarOperadora">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Ingrese el nuevo nombre de de la persona"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreEliminarPersonaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreEliminarOperadoraActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtFechaNacimientoEliminarPersona">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Ingrese la nueva fecha de nacimineto de la persona"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnAceptarEliminarPersona">
           <Properties>

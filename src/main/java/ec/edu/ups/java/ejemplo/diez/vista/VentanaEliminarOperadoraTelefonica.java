@@ -5,9 +5,7 @@
 package ec.edu.ups.java.ejemplo.diez.vista;
 
 import ec.edu.ups.ejemplo.diez.controlador.OperadoraTelefonicaControlador;
-import ec.edu.ups.ejemplo.diez.controlador.PersonaControlador;
-import ec.edu.ups.ejemplo.diez.modelo.Persona;
-import java.text.SimpleDateFormat;
+import ec.edu.ups.ejemplo.diez.modelo.OperadoraTelefonica;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,45 +34,37 @@ public class VentanaEliminarOperadoraTelefonica extends javax.swing.JInternalFra
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblCedulaEliminarPersona = new javax.swing.JLabel();
+        lblCodigoEliminarOperadora = new javax.swing.JLabel();
         lblNombreEliminarPersona = new javax.swing.JLabel();
-        lblFechaNacimientoEliminarPersona = new javax.swing.JLabel();
-        txtCedulaEliminarPersona = new javax.swing.JTextField();
-        txtNombreEliminarPersona = new javax.swing.JTextField();
-        txtFechaNacimientoEliminarPersona = new javax.swing.JTextField();
+        txtCodigoEliminarOperadora = new javax.swing.JTextField();
+        txtNombreEliminarOperadora = new javax.swing.JTextField();
         btnAceptarEliminarPersona = new javax.swing.JButton();
         btnCancelarEliminarPersona = new javax.swing.JButton();
         btnBuscarEliminarPersona = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Eliminar Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 1, 18))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Eliminar Operadora", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 1, 18))); // NOI18N
 
-        lblCedulaEliminarPersona.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        lblCedulaEliminarPersona.setText("Cedula de la persona:");
+        lblCodigoEliminarOperadora.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCodigoEliminarOperadora.setText("Codigo de la operadora:");
 
         lblNombreEliminarPersona.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblNombreEliminarPersona.setText("Nombre:");
 
-        lblFechaNacimientoEliminarPersona.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        lblFechaNacimientoEliminarPersona.setText("Fecha de Nacimiento:");
-
-        txtCedulaEliminarPersona.setToolTipText("Ingrese la nueva cedula de la persona");
-        txtCedulaEliminarPersona.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigoEliminarOperadora.setToolTipText("Ingrese la nueva cedula de la persona");
+        txtCodigoEliminarOperadora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCedulaEliminarPersonaActionPerformed(evt);
+                txtCodigoEliminarOperadoraActionPerformed(evt);
             }
         });
 
-        txtNombreEliminarPersona.setToolTipText("Ingrese el nuevo nombre de de la persona");
-        txtNombreEliminarPersona.setEnabled(false);
-        txtNombreEliminarPersona.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreEliminarOperadora.setToolTipText("Ingrese el nuevo nombre de de la persona");
+        txtNombreEliminarOperadora.setEnabled(false);
+        txtNombreEliminarOperadora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreEliminarPersonaActionPerformed(evt);
+                txtNombreEliminarOperadoraActionPerformed(evt);
             }
         });
-
-        txtFechaNacimientoEliminarPersona.setToolTipText("Ingrese la nueva fecha de nacimineto de la persona");
-        txtFechaNacimientoEliminarPersona.setEnabled(false);
 
         btnAceptarEliminarPersona.setText("Eliminar");
         btnAceptarEliminarPersona.addActionListener(new java.awt.event.ActionListener() {
@@ -104,43 +94,37 @@ public class VentanaEliminarOperadoraTelefonica extends javax.swing.JInternalFra
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCedulaEliminarPersona)
-                    .addComponent(lblNombreEliminarPersona)
-                    .addComponent(lblFechaNacimientoEliminarPersona))
+                    .addComponent(lblCodigoEliminarOperadora)
+                    .addComponent(lblNombreEliminarPersona))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnAceptarEliminarPersona)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCancelarEliminarPersona))
-                    .addComponent(txtNombreEliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCedulaEliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFechaNacimientoEliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombreEliminarOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigoEliminarOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnBuscarEliminarPersona)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCedulaEliminarPersona)
-                    .addComponent(txtCedulaEliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCodigoEliminarOperadora)
+                    .addComponent(txtCodigoEliminarOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscarEliminarPersona))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombreEliminarPersona)
-                    .addComponent(txtNombreEliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFechaNacimientoEliminarPersona)
-                    .addComponent(txtFechaNacimientoEliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                    .addComponent(txtNombreEliminarOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarEliminarPersona)
                     .addComponent(btnCancelarEliminarPersona))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,23 +141,23 @@ public class VentanaEliminarOperadoraTelefonica extends javax.swing.JInternalFra
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreEliminarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreEliminarPersonaActionPerformed
+    private void txtNombreEliminarOperadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreEliminarOperadoraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreEliminarPersonaActionPerformed
+    }//GEN-LAST:event_txtNombreEliminarOperadoraActionPerformed
 
-    private void txtCedulaEliminarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaEliminarPersonaActionPerformed
+    private void txtCodigoEliminarOperadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoEliminarOperadoraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCedulaEliminarPersonaActionPerformed
+    }//GEN-LAST:event_txtCodigoEliminarOperadoraActionPerformed
 
     private void btnAceptarEliminarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarEliminarPersonaActionPerformed
-        String cedula = txtCedulaEliminarPersona.getText();
-        int respuesta = JOptionPane.showConfirmDialog(this, "Estás seguro que deseas eliminar la persona? ");
+        String codigo = txtCodigoEliminarOperadora.getText();
+        int respuesta = JOptionPane.showConfirmDialog(this, "Estás seguro que deseas eliminar la operadora? ");
         if (respuesta == JOptionPane.YES_OPTION) {
-            if (personaControlador.eliminar(cedula)) {
-                JOptionPane.showMessageDialog(this, "La persona ha sido eliminada exitosamente! :D ");
+            if (operadoraTelefonicaControlador.eliminar(codigo)) {
+                JOptionPane.showMessageDialog(this, "La operadora ha sido eliminada exitosamente! :D ");
                 this.limpiarCampos();
             } else {
-                JOptionPane.showMessageDialog(this, "La persona con cedula" + cedula + "no existe");
+                JOptionPane.showMessageDialog(this, "La operadora con codigo" + codigo + "no existe");
             }
         }
     }//GEN-LAST:event_btnAceptarEliminarPersonaActionPerformed
@@ -184,36 +168,30 @@ public class VentanaEliminarOperadoraTelefonica extends javax.swing.JInternalFra
     }//GEN-LAST:event_btnCancelarEliminarPersonaActionPerformed
 
     private void btnBuscarEliminarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarPersonaActionPerformed
-        String cedula = txtCedulaEliminarPersona.getText();
-        Persona personita = personaControlador.buscar(cedula);
+        int codigo = Integer.parseInt(txtCodigoEliminarOperadora.getText());
+        OperadoraTelefonica operadoraTelefonica = operadoraTelefonicaControlador.buscar(codigo);
         
-        if(personita != null){
-            txtNombreEliminarPersona.setText(personita.getNombre());
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            String fechaNacimiento = sdf.format(personita.getFechaNcaimiento());
-            txtFechaNacimientoEliminarPersona.setText(fechaNacimiento);
+        if(operadoraTelefonica != null){
+            txtNombreEliminarOperadora.setText(operadoraTelefonica.getNombre());
             JOptionPane.showMessageDialog(this, "La persona ha sido encontrada exitosamente! :D ");
             
         }else{
-            JOptionPane.showMessageDialog(this, "La persona con cedula" + cedula + "no existe");
+            JOptionPane.showMessageDialog(this, "La persona con cedula" + codigo + "no existe");
         }
     }//GEN-LAST:event_btnBuscarEliminarPersonaActionPerformed
 
     private void limpiarCampos() {
-        this.txtCedulaEliminarPersona.setText("");
-        this.txtNombreEliminarPersona.setText("");
-        this.txtFechaNacimientoEliminarPersona.setText("");
+        this.txtCodigoEliminarOperadora.setText("");
+        this.txtNombreEliminarOperadora.setText("");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarEliminarPersona;
     private javax.swing.JButton btnBuscarEliminarPersona;
     private javax.swing.JButton btnCancelarEliminarPersona;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblCedulaEliminarPersona;
-    private javax.swing.JLabel lblFechaNacimientoEliminarPersona;
+    private javax.swing.JLabel lblCodigoEliminarOperadora;
     private javax.swing.JLabel lblNombreEliminarPersona;
-    private javax.swing.JTextField txtCedulaEliminarPersona;
-    private javax.swing.JTextField txtFechaNacimientoEliminarPersona;
-    private javax.swing.JTextField txtNombreEliminarPersona;
+    private javax.swing.JTextField txtCodigoEliminarOperadora;
+    private javax.swing.JTextField txtNombreEliminarOperadora;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,6 +27,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private VentanaBuscarOperadoraTelefonica ventanaBuscarOperadoraTelefonica;
     private VentanaActualizarOperadoraTelefonica ventanaActualizarOperadoraTelefonica;
     private VentanaEliminarOperadoraTelefonica ventanaEliminarOperadoraTelefonica;
+    private VentanaListarOperadoraTelefonica ventanaListarOperadoraTelefonica;
     private VentanaCrearTelefono ventanaCrearTelefono;
     
     //controladores
@@ -297,7 +298,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemCrearOperadoraActionPerformed
 
     private void menuItemListarOperadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemListarOperadoraActionPerformed
-        // TODO add your handling code here:
+        if(ventanaListarOperadoraTelefonica == null){
+            ventanaListarOperadoraTelefonica = new VentanaListarOperadoraTelefonica(operadoraTelefonicaControlador);
+            desktopPane.add(ventanaListarOperadoraTelefonica);
+        }
+        ventanaListarOperadoraTelefonica.setVisible(true);
     }//GEN-LAST:event_menuItemListarOperadoraActionPerformed
 
     private void menuItemEliminarOperadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEliminarOperadoraActionPerformed
