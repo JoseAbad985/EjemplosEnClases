@@ -9,6 +9,7 @@ import ec.edu.ups.java.ejemplo.diez.vista.*;
 import ec.edu.ups.ejemplo.diez.controlador.PersonaControlador;
 import ec.edu.ups.ejemplo.diez.controlador.TelefonoControlador;
 import ec.edu.ups.ejemplo.diez.modelo.Persona;
+import ec.edu.ups.ejemplo.diez.modelo.Telefono;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -51,13 +52,16 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
         txtFechaNacimientoCrearPersona1 = new javax.swing.JTextField();
         btnAceptarCrearTelefono1 = new javax.swing.JButton();
         btnCancelarCrearTelefono1 = new javax.swing.JButton();
+        buttonGroupTelefono = new javax.swing.ButtonGroup();
         panelCrearTelefono2 = new javax.swing.JPanel();
         lblCedulaCrearPersona2 = new javax.swing.JLabel();
         lblFechaNacimientoCrearPersona2 = new javax.swing.JLabel();
         lblNombreCrearPersona2 = new javax.swing.JLabel();
         txtNumeroCrearTelefono = new javax.swing.JTextField();
-        txtTipoCrearTelefono = new javax.swing.JTextField();
         cbxOperadoraTelefono = new javax.swing.JComboBox<>();
+        radioButtonCasa = new javax.swing.JRadioButton();
+        radioButtonCelular = new javax.swing.JRadioButton();
+        radioButtonTrabajo = new javax.swing.JRadioButton();
         panelPersona = new javax.swing.JPanel();
         lblCedulaBuscarPersona = new javax.swing.JLabel();
         lblFechaNacimientoBuscarPersona = new javax.swing.JLabel();
@@ -213,15 +217,26 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
             }
         });
 
-        txtTipoCrearTelefono.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtTipoCrearTelefono.setToolTipText("Ingrese el nombre de la nueva persona");
-        txtTipoCrearTelefono.addActionListener(new java.awt.event.ActionListener() {
+        cbxOperadoraTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Seleccione una Operadora--" }));
+        cbxOperadoraTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoCrearTelefonoActionPerformed(evt);
+                cbxOperadoraTelefonoActionPerformed(evt);
             }
         });
 
-        cbxOperadoraTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Seleccione una Operadora--" }));
+        buttonGroupTelefono.add(radioButtonCasa);
+        radioButtonCasa.setText("Casa");
+        radioButtonCasa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonCasaActionPerformed(evt);
+            }
+        });
+
+        buttonGroupTelefono.add(radioButtonCelular);
+        radioButtonCelular.setText("Celular");
+
+        buttonGroupTelefono.add(radioButtonTrabajo);
+        radioButtonTrabajo.setText("Trabajo");
 
         javax.swing.GroupLayout panelCrearTelefono2Layout = new javax.swing.GroupLayout(panelCrearTelefono2);
         panelCrearTelefono2.setLayout(panelCrearTelefono2Layout);
@@ -234,24 +249,32 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
                     .addComponent(lblNombreCrearPersona2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblFechaNacimientoCrearPersona2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelCrearTelefono2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTipoCrearTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNumeroCrearTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxOperadoraTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelCrearTelefono2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelCrearTelefono2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtNumeroCrearTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbxOperadoraTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCrearTelefono2Layout.createSequentialGroup()
+                        .addComponent(radioButtonCasa)
+                        .addGap(61, 61, 61)
+                        .addComponent(radioButtonCelular)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(radioButtonTrabajo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelCrearTelefono2Layout.setVerticalGroup(
             panelCrearTelefono2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrearTelefono2Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(45, 45, 45)
                 .addGroup(panelCrearTelefono2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblCedulaCrearPersona2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumeroCrearTelefono))
                 .addGap(24, 24, 24)
                 .addGroup(panelCrearTelefono2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombreCrearPersona2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTipoCrearTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(radioButtonCasa)
+                    .addComponent(radioButtonCelular)
+                    .addComponent(radioButtonTrabajo))
+                .addGap(36, 36, 36)
                 .addGroup(panelCrearTelefono2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblFechaNacimientoCrearPersona2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxOperadoraTelefono))
@@ -381,7 +404,7 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnCancelarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAceptarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         pack();
@@ -392,19 +415,19 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameClosing
 
     private void txtNumeroCrearTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroCrearTelefono1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtNumeroCrearTelefono1ActionPerformed
 
     private void txtTipoCrearTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoCrearTelefono1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtTipoCrearTelefono1ActionPerformed
 
     private void txtFechaNacimientoCrearPersona1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaNacimientoCrearPersona1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtFechaNacimientoCrearPersona1ActionPerformed
 
     private void btnAceptarCrearTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarCrearTelefono1ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_btnAceptarCrearTelefono1ActionPerformed
 
     private void btnCancelarCrearTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCrearTelefono1ActionPerformed
@@ -414,10 +437,6 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
     private void txtNumeroCrearTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroCrearTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroCrearTelefonoActionPerformed
-
-    private void txtTipoCrearTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoCrearTelefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoCrearTelefonoActionPerformed
 
     private void txtCedulaBuscarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaBuscarPersonaActionPerformed
         // TODO add your handling code here:
@@ -443,16 +462,40 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
         }else{
             JOptionPane.showMessageDialog(this, "La persona con cedula" + cedula + "no existe");
         }
-
     }//GEN-LAST:event_btnBuscarBuscarPersonaActionPerformed
 
     private void btnAceptarTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarTelefonoActionPerformed
-        // TODO add your handling code here:
+        String numero = txtNumeroCrearTelefono.getText();     
+        Telefono telefonito = new Telefono();
+        telefonito.setNumero(numero);
+        
+        telefonito.setUnaOperadoraTelefonica(unaOperadoraTelefonica);
+        
+        String cedula = txtCedulaBuscarPersona.getText();
+        Persona personita = personaControlador.buscar(cedula);
+        if(personita != null){
+            JOptionPane.showMessageDialog(this, "Se asignó correctamente el telefono a la persona; " + personita.getNombre());
+        }else{
+            JOptionPane.showMessageDialog(this, "La persona con cedula" + cedula + "a la cual quiere asignar el telefono no existe");
+        }
+        telefonito.setUnaPersona(personita);
+        telefonito.setTipo(title);
+        telefonoControlador.crear(telefonito);
+        this.limpiarCampos();
     }//GEN-LAST:event_btnAceptarTelefonoActionPerformed
+
+    private void cbxOperadoraTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOperadoraTelefonoActionPerformed
+        System.out.println("hola");
+    }//GEN-LAST:event_cbxOperadoraTelefonoActionPerformed
+
+    private void radioButtonCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonCasaActionPerformed
+        
+        
+    }//GEN-LAST:event_radioButtonCasaActionPerformed
 
     private void limpiarCampos(){
         this.txtNumeroCrearTelefono.setText("");
-        this.txtTipoCrearTelefono.setText("");
+        //this.txtTipoCrearTelefono.setText("");
         this.txtFechaNacimientoCrearPersona.setText("");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -461,6 +504,7 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarBuscarPersona;
     private javax.swing.JButton btnCancelarCrearTelefono1;
     private javax.swing.JButton btnCancelarTelefono;
+    private javax.swing.ButtonGroup buttonGroupTelefono;
     private javax.swing.JComboBox<String> cbxOperadoraTelefono;
     private javax.swing.JLabel lblCedulaBuscarPersona;
     private javax.swing.JLabel lblCedulaCrearPersona1;
@@ -474,13 +518,15 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
     private javax.swing.JPanel panelCrearTelefono1;
     private javax.swing.JPanel panelCrearTelefono2;
     private javax.swing.JPanel panelPersona;
+    private javax.swing.JRadioButton radioButtonCasa;
+    private javax.swing.JRadioButton radioButtonCelular;
+    private javax.swing.JRadioButton radioButtonTrabajo;
     private javax.swing.JTextField txtCedulaBuscarPersona;
     private javax.swing.JTextField txtFechaNacimientoCrearPersona;
     private javax.swing.JTextField txtFechaNacimientoCrearPersona1;
     private javax.swing.JTextField txtNombreBuscarPersona;
     private javax.swing.JTextField txtNumeroCrearTelefono;
     private javax.swing.JTextField txtNumeroCrearTelefono1;
-    private javax.swing.JTextField txtTipoCrearTelefono;
     private javax.swing.JTextField txtTipoCrearTelefono1;
     // End of variables declaration//GEN-END:variables
 }
