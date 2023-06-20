@@ -16,7 +16,7 @@ import java.util.List;
 public class TelefonoDAO implements ITelefonoDAO{
     private List<Telefono> listaTelefonos;
 
-    public TelefonoDAO(List<Telefono> listaTelefonos) {
+    public TelefonoDAO() {
         listaTelefonos = new ArrayList<>();
     }
     
@@ -50,10 +50,10 @@ public class TelefonoDAO implements ITelefonoDAO{
     }
 
     @Override
-    public void delete(String numero) {
+    public void delete(Telefono telefono) {
         for(int i = 0;i<listaTelefonos.size();i++) {
             Telefono telefonoGuardado = listaTelefonos.get(i);
-            if(telefonoGuardado.getNumero().equals(numero)){
+            if(telefonoGuardado.getNumero().equals(telefono.getNumero())){
                 listaTelefonos.remove(i);
                 break;
                 

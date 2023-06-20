@@ -3,14 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/MDIApplication.java to edit this template
  */
 
-package ec.edu.ups.java.ejemplo.diez.vista;
+package ec.edu.ups.java.ejemplo.diez.main;
 
+import ec.edu.ups.java.ejemplo.diez.vista.operadoraTelefonica.VentanaActualizarOperadoraTelefonica;
+import ec.edu.ups.java.ejemplo.diez.vista.operadoraTelefonica.VentanaListarOperadoraTelefonica;
+import ec.edu.ups.java.ejemplo.diez.vista.operadoraTelefonica.VentanaCrearOperadoraTelefonica;
+import ec.edu.ups.java.ejemplo.diez.vista.operadoraTelefonica.VentanaBuscarOperadoraTelefonica;
+import ec.edu.ups.java.ejemplo.diez.vista.operadoraTelefonica.VentanaEliminarOperadoraTelefonica;
 import ec.edu.ups.ejemplo.diez.controlador.OperadoraTelefonicaControlador;
 import ec.edu.ups.ejemplo.diez.controlador.PersonaControlador;
+import ec.edu.ups.ejemplo.diez.controlador.TelefonoControlador;
 import ec.edu.ups.ejemplo.diez.dao.OperadoraTelefonicaDAO;
 import ec.edu.ups.ejemplo.diez.dao.PersonaDAO;
+import ec.edu.ups.ejemplo.diez.dao.TelefonoDAO;
 import ec.edu.ups.ejemplo.diez.idao.IOperadoraTelefonicaDAO;
 import ec.edu.ups.ejemplo.diez.idao.IPersonaDAO;
+import ec.edu.ups.ejemplo.diez.idao.ITelefonoDAO;
+import ec.edu.ups.java.ejemplo.diez.vista.VentanaActualizarPersona;
+import ec.edu.ups.java.ejemplo.diez.vista.VentanaBuscarPersona;
+import ec.edu.ups.java.ejemplo.diez.vista.VentanaCrearPersona;
+import ec.edu.ups.java.ejemplo.diez.vista.telefono.VentanaCrearTelefono;
+import ec.edu.ups.java.ejemplo.diez.vista.VentanaEliminarPersona;
+import ec.edu.ups.java.ejemplo.diez.vista.VentanaListarPersona;
 
 /**
  *
@@ -33,18 +47,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     //controladores
     private PersonaControlador personaControlador;
     private OperadoraTelefonicaControlador operadoraTelefonicaControlador;
+    private TelefonoControlador telefonoControlador;
     //DAO´s
     private IPersonaDAO personaDAO;
     private IOperadoraTelefonicaDAO operadoraDAO;
+    private ITelefonoDAO telefonoDAO;
     
     /** Creates new form VentanaPrincipal */
     public VentanaPrincipal() {
         initComponents();
         personaDAO = new PersonaDAO();
         operadoraDAO = new OperadoraTelefonicaDAO();
+        telefonoDAO = new TelefonoDAO();
         personaControlador = new PersonaControlador(personaDAO);
         operadoraTelefonicaControlador = new OperadoraTelefonicaControlador(operadoraDAO);
-        
+        telefonoControlador = new TelefonoControlador(telefonoDAO);
     }
 
     /** This method is called from within the constructor to
@@ -268,11 +285,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
         );
 
         pack();
@@ -383,7 +400,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void menuItemCrearTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCrearTelefonoActionPerformed
         if (ventanaCrearTelefono == null){
-            ventanaCrearTelefono=new VentanaCrearTelefono();
+            ventanaCrearTelefono = new VentanaCrearTelefono(telefonoControlador);
             desktopPane.add(ventanaCrearTelefono);
         }
         ventanaCrearTelefono.setVisible(true);

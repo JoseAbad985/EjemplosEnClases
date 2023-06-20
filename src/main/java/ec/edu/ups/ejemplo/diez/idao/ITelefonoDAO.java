@@ -16,6 +16,6 @@ public interface ITelefonoDAO {
     public void create(Telefono telefono);
     public Telefono read (String numero);
     public void update(Telefono telefono);
-    public void delete (String numero);
+    public void delete (Telefono telefono);
     public List<Telefono>list();
 }

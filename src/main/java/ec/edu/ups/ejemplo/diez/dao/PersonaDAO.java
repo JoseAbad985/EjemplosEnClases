@@ -9,10 +9,8 @@ import ec.edu.ups.ejemplo.diez.modelo.Persona;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author samanthasuquilandaquilli
- */
+
+
 public class PersonaDAO implements IPersonaDAO {
 
     private List<Persona> listaPersonas;
