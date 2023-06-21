@@ -162,7 +162,7 @@
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="maximizable" type="boolean" value="true"/>
     <Property name="resizable" type="boolean" value="true"/>
-    <Property name="title" type="java.lang.String" value="Ingresar Nuevo Telefono"/>
+    <Property name="title" type="java.lang.String" value="Buscar Telefono"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -186,34 +186,25 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="panelPersona" max="32767" attributes="0"/>
-                  <Component id="panelCrearTelefono2" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="452" max="-2" attributes="0"/>
+              <Component id="btnCancelarBuscarTelefono" min="-2" pref="113" max="-2" attributes="0"/>
+              <EmptySpace pref="492" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
-              <Component id="btnAceptarTelefono" min="-2" pref="103" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Component id="btnCancelarTelefono" min="-2" pref="113" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="panelCrearTelefono2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="panelCrearTelefono2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="panelPersona" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnCancelarTelefono" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnAceptarTelefono" min="-2" pref="35" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="97" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="btnCancelarBuscarTelefono" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace pref="535" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -226,12 +217,12 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Crear Nuevo Telefono">
+            <TitledBorder title="Buscar Telefono">
               <Font PropertyName="font" name="Helvetica Neue" size="18" style="0"/>
             </TitledBorder>
           </Border>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Crear Nuevo Telefono"/>
+        <Property name="toolTipText" type="java.lang.String" value="Buscar Telefono"/>
       </Properties>
 
       <Layout>
@@ -240,55 +231,69 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblCedulaCrearPersona2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblNombreCrearPersona2" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                      <Component id="lblFechaNacimientoCrearPersona2" alignment="0" min="-2" pref="303" max="-2" attributes="0"/>
+                      <Component id="lblNumeroBuscarTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTipoBuscarTelefono" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                      <Component id="lblOperadoraBuscarTelefono" alignment="0" min="-2" pref="303" max="-2" attributes="0"/>
+                      <Component id="lblNombreBuscarPersona" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtNumeroCrearTelefono" alignment="1" min="-2" pref="292" max="-2" attributes="0"/>
-                          <Component id="cbxOperadoraTelefono" alignment="1" min="-2" pref="292" max="-2" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="txtNombreBuscarTelefono" pref="292" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="radioButtonCasa" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Component id="radioButtonCelular" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtNumeroBuscarTelefono" max="32767" attributes="0"/>
+                              <Component id="txtTipoBuscarTelefono" max="32767" attributes="0"/>
+                              <Component id="txtOperadoraBuscarTelefono" pref="292" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnAceptarBuscarTelefono" min="-2" pref="103" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="radioButtonTrabajo" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lblCedulaCrearPersona2" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="txtNumeroCrearTelefono" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblNumeroBuscarTelefono" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="btnAceptarBuscarTelefono" min="-2" pref="35" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="txtNumeroBuscarTelefono" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblNombreCrearPersona2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="radioButtonCasa" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="radioButtonCelular" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="radioButtonTrabajo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTipoBuscarTelefono" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtTipoBuscarTelefono" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lblFechaNacimientoCrearPersona2" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="cbxOperadoraTelefono" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblOperadoraBuscarTelefono" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtOperadoraBuscarTelefono" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="69" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblNombreBuscarPersona" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="txtNombreBuscarTelefono" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblCedulaCrearPersona2">
+        <Component class="javax.swing.JLabel" name="lblNumeroBuscarTelefono">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Apple LiGothic" size="24" style="0"/>
@@ -296,7 +301,7 @@
             <Property name="text" type="java.lang.String" value="Numero:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblFechaNacimientoCrearPersona2">
+        <Component class="javax.swing.JLabel" name="lblOperadoraBuscarTelefono">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Apple LiGothic" size="24" style="0"/>
@@ -304,7 +309,7 @@
             <Property name="text" type="java.lang.String" value="Operadora:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblNombreCrearPersona2">
+        <Component class="javax.swing.JLabel" name="lblTipoBuscarTelefono">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Apple LiGothic" size="24" style="0"/>
@@ -312,203 +317,53 @@
             <Property name="text" type="java.lang.String" value="Tipo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNumeroCrearTelefono">
+        <Component class="javax.swing.JTextField" name="txtNumeroBuscarTelefono">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="toolTipText" type="java.lang.String" value="Ingrese la cedula de la nueva persona"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumeroCrearTelefonoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumeroBuscarTelefonoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cbxOperadoraTelefono">
+        <Component class="javax.swing.JButton" name="btnAceptarBuscarTelefono">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="1">
-                <StringItem index="0" value="--Seleccione una Operadora--"/>
-              </StringArray>
-            </Property>
+            <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxOperadoraTelefonoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAceptarBuscarTelefonoActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="radioButtonCasa">
+        <Component class="javax.swing.JTextField" name="txtTipoBuscarTelefono">
           <Properties>
-            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupTelefono"/>
-            </Property>
-            <Property name="selected" type="boolean" value="true"/>
-            <Property name="text" type="java.lang.String" value="Casa"/>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioButtonCasaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTipoBuscarTelefonoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="radioButtonCelular">
+        <Component class="javax.swing.JTextField" name="txtOperadoraBuscarTelefono">
           <Properties>
-            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupTelefono"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Celular"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="radioButtonTrabajo">
-          <Properties>
-            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupTelefono"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Trabajo"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="panelPersona">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Buscar Persona para asignar">
-              <Font PropertyName="font" name="Helvetica Neue" size="18" style="0"/>
-            </TitledBorder>
-          </Border>
-        </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Buscar Persona"/>
-      </Properties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblNombreBuscarPersona" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                      <Component id="lblFechaNacimientoBuscarPersona" alignment="0" min="-2" pref="303" max="-2" attributes="0"/>
-                      <Component id="lblCedulaBuscarPersona" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtCedulaBuscarPersona" alignment="0" min="-2" pref="292" max="-2" attributes="0"/>
-                              <Component id="txtNombreBuscarPersona" alignment="0" min="-2" pref="292" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="btnBuscarBuscarPersona" min="-2" pref="106" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="txtFechaNacimientoCrearPersona" min="-2" pref="292" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="56" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lblCedulaBuscarPersona" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                          <Component id="txtCedulaBuscarPersona" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="btnBuscarBuscarPersona" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblNombreBuscarPersona" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="txtNombreBuscarPersona" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblFechaNacimientoBuscarPersona" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="txtFechaNacimientoCrearPersona" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="185" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblCedulaBuscarPersona">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Apple LiGothic" size="24" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ingrese la Cedula:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblFechaNacimientoBuscarPersona">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Apple LiGothic" size="24" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="La Fecha de Nacimiento es:"/>
+            <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreBuscarPersona">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Apple LiGothic" size="24" style="0"/>
+              <Font name="Segoe UI" size="24" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="El Nombre es:"/>
+            <Property name="text" type="java.lang.String" value="Nombre:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtCedulaBuscarPersona">
+        <Component class="javax.swing.JTextField" name="txtNombreBuscarTelefono">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="toolTipText" type="java.lang.String" value="Ingrese la cedula de la persona a buscar"/>
+            <Property name="editable" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCedulaBuscarPersonaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtNombreBuscarPersona">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreBuscarPersonaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtFechaNacimientoCrearPersona">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="toolTipText" type="java.lang.String" value="Ingrese la fecha de nacimiento de la nueva persona (01/01/2004)"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaNacimientoCrearPersonaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnBuscarBuscarPersona">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial Black" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value=" Buscar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarBuscarPersonaActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnAceptarTelefono">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Aceptar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAceptarTelefonoActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCancelarTelefono">
+    <Component class="javax.swing.JButton" name="btnCancelarBuscarTelefono">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>

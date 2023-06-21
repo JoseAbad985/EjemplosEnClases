@@ -63,7 +63,7 @@ public class OperadoraTelefonica {
 
     @Override
     public String toString() {
-        return "OperadoraTelefonica{" + "codigo=" + codigo + ", nombre=" + nombre + '}';
+        return  nombre;
     }
 
     

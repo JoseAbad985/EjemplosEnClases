@@ -12,18 +12,16 @@ import java.util.Objects;
  */
 public class Telefono {
     private String numero;
-    private String tipo;
+    private TipoTelefono tipo;
     private Persona unaPersona;
     private OperadoraTelefonica unaOperadoraTelefonica;
 
     public Telefono() {
     }
-
-    public Telefono(String numero, String tipo, Persona unaPersona, OperadoraTelefonica unaOperadoraTelefonica) {
+    
+    public Telefono(String numero, TipoTelefono tipo) {
         this.numero = numero;
         this.tipo = tipo;
-        this.unaPersona = unaPersona;
-        this.unaOperadoraTelefonica = unaOperadoraTelefonica;
     }
 
     public String getNumero() {
@@ -34,11 +32,11 @@ public class Telefono {
         this.numero = numero;
     }
 
-    public String getTipo() {
+    public TipoTelefono getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoTelefono tipo) {
         this.tipo = tipo;
     }
 
@@ -61,10 +59,7 @@ public class Telefono {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 83 * hash + Objects.hashCode(this.numero);
-        hash = 83 * hash + Objects.hashCode(this.tipo);
-        hash = 83 * hash + Objects.hashCode(this.unaPersona);
-        hash = 83 * hash + Objects.hashCode(this.unaOperadoraTelefonica);
+        hash = 97 * hash + Objects.hashCode(this.numero);
         return hash;
     }
 
@@ -80,26 +75,12 @@ public class Telefono {
             return false;
         }
         final Telefono other = (Telefono) obj;
-        if (!Objects.equals(this.numero, other.numero)) {
-            return false;
-        }
-        if (!Objects.equals(this.tipo, other.tipo)) {
-            return false;
-        }
-        if (!Objects.equals(this.unaPersona, other.unaPersona)) {
-            return false;
-        }
-        return Objects.equals(this.unaOperadoraTelefonica, other.unaOperadoraTelefonica);
-    }
-    public void agregarPersona(Persona persona) {
-        
+        return Objects.equals(this.numero, other.numero);
     }
 
     @Override
     public String toString() {
         return "Telefono{" + "numero=" + numero + ", tipo=" + tipo + ", unaPersona=" + unaPersona + ", unaOperadoraTelefonica=" + unaOperadoraTelefonica + '}';
     }
-
     
-
 }

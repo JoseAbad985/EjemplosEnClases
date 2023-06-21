@@ -25,26 +25,30 @@ import ec.edu.ups.java.ejemplo.diez.vista.VentanaCrearPersona;
 import ec.edu.ups.java.ejemplo.diez.vista.telefono.VentanaCrearTelefono;
 import ec.edu.ups.java.ejemplo.diez.vista.VentanaEliminarPersona;
 import ec.edu.ups.java.ejemplo.diez.vista.VentanaListarPersona;
+import ec.edu.ups.java.ejemplo.diez.vista.telefono.VentanaBuscarTelefono;
 
 /**
  *
  * @author samanthasuquilandaquilli
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-    //ventanas
+    //Ventanas Persona
     private VentanaCrearPersona ventanaCrearPersona;
     private VentanaBuscarPersona ventanaBuscarPersona;
     private VentanaActualizarPersona ventanaActualizarPersona;
     private VentanaEliminarPersona ventanaEliminarPersona;
     private VentanaListarPersona ventanaListarPersona;
+    //Ventanas Operadora
     private VentanaCrearOperadoraTelefonica ventanaCrearOperadoraTelefonica;
     private VentanaBuscarOperadoraTelefonica ventanaBuscarOperadoraTelefonica;
     private VentanaActualizarOperadoraTelefonica ventanaActualizarOperadoraTelefonica;
     private VentanaEliminarOperadoraTelefonica ventanaEliminarOperadoraTelefonica;
     private VentanaListarOperadoraTelefonica ventanaListarOperadoraTelefonica;
+    //Ventana Telefono
     private VentanaCrearTelefono ventanaCrearTelefono;
+    private VentanaBuscarTelefono ventanaBuscarTelefono;
     
-    //controladores
+    //Controladores
     private PersonaControlador personaControlador;
     private OperadoraTelefonicaControlador operadoraTelefonicaControlador;
     private TelefonoControlador telefonoControlador;
@@ -332,7 +336,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemEliminarOperadoraActionPerformed
 
     private void menuItemBuscarTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBuscarTelefonoActionPerformed
-        // TODO add your handling code here:
+        if(ventanaBuscarTelefono == null){
+            ventanaBuscarTelefono = new VentanaBuscarTelefono(telefonoControlador, personaControlador, operadoraTelefonicaControlador);
+            desktopPane.add(ventanaBuscarTelefono);
+        }
+        
+        ventanaBuscarTelefono.setVisible(true);
     }//GEN-LAST:event_menuItemBuscarTelefonoActionPerformed
 
     private void menuOpcionesMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_menuOpcionesMenuSelected
@@ -400,7 +409,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void menuItemCrearTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCrearTelefonoActionPerformed
         if (ventanaCrearTelefono == null){
-            ventanaCrearTelefono = new VentanaCrearTelefono(telefonoControlador);
+            ventanaCrearTelefono = new VentanaCrearTelefono(telefonoControlador, personaControlador, operadoraTelefonicaControlador);
             desktopPane.add(ventanaCrearTelefono);
         }
         ventanaCrearTelefono.setVisible(true);

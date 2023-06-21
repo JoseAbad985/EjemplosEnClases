@@ -5,13 +5,7 @@
 package ec.edu.ups.java.ejemplo.diez.vista.operadoraTelefonica;
 
 import ec.edu.ups.ejemplo.diez.controlador.OperadoraTelefonicaControlador;
-import ec.edu.ups.ejemplo.diez.controlador.PersonaControlador;
 import ec.edu.ups.ejemplo.diez.modelo.OperadoraTelefonica;
-import ec.edu.ups.ejemplo.diez.modelo.Persona;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 /**

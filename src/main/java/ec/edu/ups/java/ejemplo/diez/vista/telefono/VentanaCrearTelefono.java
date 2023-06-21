@@ -5,15 +5,16 @@
 package ec.edu.ups.java.ejemplo.diez.vista.telefono;
 
 
-import ec.edu.ups.java.ejemplo.diez.vista.*;
+import ec.edu.ups.ejemplo.diez.controlador.OperadoraTelefonicaControlador;
 import ec.edu.ups.ejemplo.diez.controlador.PersonaControlador;
 import ec.edu.ups.ejemplo.diez.controlador.TelefonoControlador;
+import ec.edu.ups.ejemplo.diez.modelo.OperadoraTelefonica;
 import ec.edu.ups.ejemplo.diez.modelo.Persona;
 import ec.edu.ups.ejemplo.diez.modelo.Telefono;
-import java.text.ParseException;
+import ec.edu.ups.ejemplo.diez.modelo.TipoTelefono;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,13 +25,17 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
     
     private TelefonoControlador telefonoControlador;
     private PersonaControlador personaControlador;
+    private OperadoraTelefonicaControlador operadoraTelefonicaControlador;
+    private OperadoraTelefonica operadoraTelefonicaSeleccionada;
+    private Persona personaSeleccionada;
     /**
      * Creates new form VentanaCrearPersona
      */
-    public VentanaCrearTelefono(TelefonoControlador telefonoControlador) {
+    public VentanaCrearTelefono(TelefonoControlador telefonoControlador, PersonaControlador personaControlador, OperadoraTelefonicaControlador operadoraTelefonicaControlador) {
         initComponents();
         this.telefonoControlador = telefonoControlador;
         this.personaControlador = personaControlador;
+        this.operadoraTelefonicaControlador = operadoraTelefonicaControlador;
         
     }
 
@@ -178,8 +183,10 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Ingresar Nuevo Telefono");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -225,6 +232,7 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
         });
 
         buttonGroupTelefono.add(radioButtonCasa);
+        radioButtonCasa.setSelected(true);
         radioButtonCasa.setText("Casa");
         radioButtonCasa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,7 +290,7 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
         );
 
         panelPersona.setBackground(new java.awt.Color(204, 204, 204));
-        panelPersona.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 18))); // NOI18N
+        panelPersona.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Persona para asignar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 18))); // NOI18N
         panelPersona.setToolTipText("Buscar Persona");
 
         lblCedulaBuscarPersona.setFont(new java.awt.Font("Apple LiGothic", 0, 24)); // NOI18N
@@ -386,7 +394,7 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelCrearTelefono2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 205, Short.MAX_VALUE))
+                .addGap(0, 184, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(294, 294, 294)
                 .addComponent(btnAceptarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -453,39 +461,56 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
     private void btnBuscarBuscarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarBuscarPersonaActionPerformed
 
         String cedula = txtCedulaBuscarPersona.getText();
-        Persona personita = personaControlador.buscar(cedula);
-        if(personita != null){
-            txtNombreBuscarPersona.setText(personita.getNombre());
+        personaSeleccionada = personaControlador.buscar(cedula);
+        if(personaSeleccionada != null){
+            txtNombreBuscarPersona.setText(personaSeleccionada.getNombre());
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            String fechaNacimiento = sdf.format(personita.getFechaNcaimiento().getTime());
+            String fechaNacimiento = sdf.format(personaSeleccionada.getFechaNcaimiento().getTime());
             txtFechaNacimientoCrearPersona.setText(fechaNacimiento);
         }else{
-            JOptionPane.showMessageDialog(this, "La persona con cedula" + cedula + "no existe");
-        }
+            JOptionPane.showMessageDialog(this, "La persona con cedula " + cedula + " no existe");
+            limpiarCampos();
+        }    
     }//GEN-LAST:event_btnBuscarBuscarPersonaActionPerformed
 
     private void btnAceptarTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarTelefonoActionPerformed
-        String numero = txtNumeroCrearTelefono.getText();     
-        Telefono telefonito = new Telefono();
-        telefonito.setNumero(numero);
-        
-        telefonito.setUnaOperadoraTelefonica(unaOperadoraTelefonica);
-        
-        String cedula = txtCedulaBuscarPersona.getText();
-        Persona personita = personaControlador.buscar(cedula);
-        if(personita != null){
-            JOptionPane.showMessageDialog(this, "Se asignó correctamente el telefono a la persona; " + personita.getNombre());
+        if(camposObligatoriosConDatos()){
+            JOptionPane.showMessageDialog(this,"Los datos del telefono son obligatorios de llenar. ");
         }else{
-            JOptionPane.showMessageDialog(this, "La persona con cedula" + cedula + "a la cual quiere asignar el telefono no existe");
+            
+        String numero = txtNumeroCrearTelefono.getText();     
+        TipoTelefono tipo;
+        
+        if(radioButtonCasa.isSelected()){
+            tipo = TipoTelefono.CASA;
+        }else if(radioButtonCelular.isSelected()){
+            tipo = TipoTelefono.CELULAR;
+        }else{
+            tipo = TipoTelefono.TRABAJO;
         }
-        telefonito.setUnaPersona(personita);
-        telefonito.setTipo(title);
+        
+        operadoraTelefonicaSeleccionada = (OperadoraTelefonica) cbxOperadoraTelefono.getSelectedItem();
+        
+        Telefono telefonito = new Telefono(numero, tipo);
+        telefonito.setUnaOperadoraTelefonica(operadoraTelefonicaSeleccionada);
+        telefonito.setUnaPersona(personaSeleccionada);
+        
+        if(personaSeleccionada != null){
+            JOptionPane.showMessageDialog(this, "Se creó correctamente el telefono y se le asignó correctamente la persona; " + personaSeleccionada.getNombre());
+        }else{
+            JOptionPane.showMessageDialog(this, "La persona con cedula" + personaSeleccionada.getCedula() + "a la cual quiere asignar el telefono no existe");
+        }
+        telefonito.setUnaPersona(personaSeleccionada);
         telefonoControlador.crear(telefonito);
         this.limpiarCampos();
+        this.limpiarCamposTelefono();
+        
+        }
+        
     }//GEN-LAST:event_btnAceptarTelefonoActionPerformed
 
     private void cbxOperadoraTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOperadoraTelefonoActionPerformed
-        System.out.println("hola");
+        /*System.out.println("hola");*/
     }//GEN-LAST:event_cbxOperadoraTelefonoActionPerformed
 
     private void radioButtonCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonCasaActionPerformed
@@ -493,10 +518,36 @@ public class VentanaCrearTelefono extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_radioButtonCasaActionPerformed
 
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        cargarDatosOperadora();
+    }//GEN-LAST:event_formInternalFrameActivated
+
     private void limpiarCampos(){
-        this.txtNumeroCrearTelefono.setText("");
-        //this.txtTipoCrearTelefono.setText("");
+        this.txtNombreBuscarPersona.setText("");
+        this.txtCedulaBuscarPersona.setText("");
         this.txtFechaNacimientoCrearPersona.setText("");
+    }
+    
+    private void limpiarCamposTelefono(){
+        this.txtNumeroCrearTelefono.setText("");
+        this.cbxOperadoraTelefono.setSelectedIndex(0);
+        this.radioButtonCasa.setSelected(true);
+    }
+    private void cargarDatosOperadora(){
+        DefaultComboBoxModel<OperadoraTelefonica> modelo = (DefaultComboBoxModel)this.cbxOperadoraTelefono.getModel();
+        List<OperadoraTelefonica> listaOperadorasTelefonicas = operadoraTelefonicaControlador.listar();
+        modelo.removeAllElements();
+        for(OperadoraTelefonica operadoraTelefonica : listaOperadorasTelefonicas){
+            modelo.addElement(operadoraTelefonica);
+        }
+    }
+    
+    private boolean camposObligatoriosConDatos(){
+        if(!this.txtNumeroCrearTelefono.getText().isEmpty() && this.cbxOperadoraTelefono.getSelectedIndex()>=0){
+            return true;
+        }else{
+        return false;
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarCrearTelefono1;

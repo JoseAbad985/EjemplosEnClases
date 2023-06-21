@@ -16,6 +16,6 @@ public interface IOperadoraTelefonicaDAO {
     public OperadoraTelefonica read(int codigo);
     public void update (OperadoraTelefonica operadoraTelefonica);
     public void delete(OperadoraTelefonica operadoraTelefonica);
-    public List<OperadoraTelefonica>list();
+    public List<OperadoraTelefonica> list();
     
 }
